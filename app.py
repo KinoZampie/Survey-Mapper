@@ -109,7 +109,7 @@ def user_creation(fname,lname,city,state,country):
         user_data[user_uuid]["question_data"].append(question_none)
     with open('users/{}.json'.format(user_uuid), "w") as f:
         f.write(json.dumps(user_data,indent=2))
-    
+
     return user_uuid
 
 app = Flask(__name__)
@@ -194,4 +194,4 @@ def user_results(user_id):
     return render_template("user_results.html",fname=fname,lname=lname, economic=u_economic, diplomatic=u_diplomatic, civil=u_civil, societal=u_societal, city=city, state=state, country=country)
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8080)
+  app.run(host='0.0.0.0', port=80)

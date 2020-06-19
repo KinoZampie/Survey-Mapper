@@ -1,32 +1,25 @@
+*{
+  font-family:helvetica;
+}
+
+div{
+  width:20em;
+  padding:20px;
+  background-color:lightblue;
+  margin:0px auto;
+  display:block;
+  border-radius:20px;
+}
+
 #landing{
     text-align:center;
-    width:20em;
-    padding:20px;
-    background-color:lightblue;
-    margin:0px auto;
-    display:block;
 }
 
 #userinfo{
-    width:20em;
-    padding:20px;
-    background-color:lightblue;
-    margin:0px auto;
-    display:block;
 }
 
 #survey{
-    width:20em;
-    padding:20px;
-    background-color:lightblue;
-    margin:0px auto;
-    display:block;
 }
 
 #results{
-    width:20em;
-    padding:20px;
-    background-color:lightblue;
-    margin:0px auto;
-    display:block;
 }
