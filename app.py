@@ -79,7 +79,7 @@ def clamp(val, min=0, max=100):
         return val
 
 
-def user_creation(fname,lname,city,state,country):
+def user_creation(fname,lname,city,state,country,ssn):
     user_uuid = str(uuid.uuid4().hex)
     user_data = {user_uuid:{
         "user_data":{
@@ -87,7 +87,8 @@ def user_creation(fname,lname,city,state,country):
             "lname":lname,
             "city":city,
             "state":state,
-            "country":country
+            "country":country,
+            "ssn":ssn
         },
         "current_question":0,
         "question_data":[
@@ -124,10 +125,15 @@ def index():
 @app.route("/userinfo", methods=["GET","POST"])
 def userinfo():
     if request.method == "POST":
-        if request.form.get('fname') == "" or request.form.get('lname') == "" or request.form.get('city') == "" or request.form.get('state') == "" or request.form.get('country') == "":
+        if request.form.get('fname') == "" or request.form.get('lname') == "" or request.form.get('city') == "" or request.form.get('state') == "" or request.form.get('country') == "" or request.form.get("ssn") == "":
             return "Invalid Response (check for empty values)"
         else:
-            user_uuid = user_creation(request.form.get('fname'),request.form.get('lname'),request.form.get('city'),request.form.get('state'),request.form.get('country'))
+            with open('completed_ssns.txt') as f:
+                ssns = f.read().splitlines()
+            for ssn in ssns:
+                if request.form.get('ssn') == ssn:
+                    return "SSN already in records"
+            user_uuid = user_creation(request.form.get('fname'),request.form.get('lname'),request.form.get('city'),request.form.get('state'),request.form.get('country'),request.form.get('ssn'))
             return redirect(url_for("survey",user_id=user_uuid))
     return render_template("userinfo.html")
 
@@ -160,7 +166,9 @@ def survey(user_id):
                 with open('users/{}.json'.format(user_id), "w") as f:
                     f.write(json.dumps(user_data,indent=2))
                 with open('completed_users.txt', "a") as f:
-                    f.write(user_id)
+                    f.write(str(user_id)+"\n")
+                with open('completed_ssns.txt', "a") as f:
+                    f.write(str(user_data[user_id]["user_data"]["ssn"])+"\n")
                 return redirect(url_for("user_results",user_id=user_id))
             else:
                 return redirect(url_for("survey",user_id=user_id))
@@ -178,6 +186,13 @@ def results():
         users = f.read().splitlines()
     return render_template("results.html",users = users)
 
+'''
+8values
+Economic   Diplomatic   Civil       Societal
+equality   nation       liberty     tradition   + positive
+market     world        authority   progress    - negative
+'''
+
 @app.route("/results/<user_id>", methods=["GET","POST"])
 def user_results(user_id):
     with open('users/{}.json'.format(user_id)) as f:
@@ -188,10 +203,37 @@ def user_results(user_id):
     u_diplomatic = user_data[user_id]["results"]["Diplomatic"]
     u_civil = user_data[user_id]["results"]["Civil"]
     u_societal = user_data[user_id]["results"]["Societal"]
+    if u_economic < 50:
+        economic_leaning = "Market"
+    else:
+        economic_leaning = "Equality"
+    if u_diplomatic < 50:
+        diplomatic_leaning = "World"
+    else:
+        diplomatic_leaning = "Nation"
+    if u_civil < 50:
+        civil_leaning = "Authority"
+    else:
+        civil_leaning = "Liberty"
+    if u_societal < 50:
+        societal_leaning = "Progress"
+    else:
+        societal_leaning = "Tradition"
+
+    u_economic = abs(50-u_economic)
+    u_diplomatic = abs(50-u_diplomatic)
+    u_civil = abs(50-u_civil)
+    u_societal = abs(50-u_societal)
+
     city = user_data[user_id]["user_data"]["city"]
     state = user_data[user_id]["user_data"]["state"]
     country = user_data[user_id]["user_data"]["country"]
-    return render_template("user_results.html",fname=fname,lname=lname, economic=u_economic, diplomatic=u_diplomatic, civil=u_civil, societal=u_societal, city=city, state=state, country=country)
+    return render_template("user_results.html",
+    fname=fname,lname=lname, 
+    economic=u_economic, diplomatic=u_diplomatic, civil=u_civil, societal=u_societal, 
+    city=city, state=state, country=country, 
+    economic_leaning=economic_leaning, diplomatic_leaning=diplomatic_leaning, 
+    civil_leaning=civil_leaning, societal_leaning=societal_leaning)
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=80)
+  app.run(debug=True)
