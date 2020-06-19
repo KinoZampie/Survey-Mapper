@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <div id=userinfo>
+        <h1>Survey Mapper</h1>
+        <p>Minimum Viable Product Edition</p>
+        <form method="POST">
+            <p>First Name: <input type="text" name="fname"></p>
+            <p>Last Name: <input type="text" name="lname"></p>
+            <p>City/Town: <input type="text" name="city"></p>
+            <p>State/Province: <input type="text" name="state"></p>
+            <p>Country: <input type="text" name="country"></p>
+            <input type="submit">
+        </form>
+        </div>
+    </body>
+</html>
