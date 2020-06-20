@@ -249,5 +249,36 @@ def user_results(user_id):
     economic_leaning=economic_leaning, diplomatic_leaning=diplomatic_leaning, 
     civil_leaning=civil_leaning, societal_leaning=societal_leaning)
 
+@app.route("/chart")
+def chart():
+    condensed = []
+    with open('scores/economic.txt') as f:
+        econ = f.read().splitlines()
+        condensed.append(econ)
+    with open('scores/diplomatic.txt') as f:
+        diplo = f.read().splitlines()
+        condensed.append(diplo)
+    with open('scores/civil.txt') as f:
+        civ = f.read().splitlines()
+        condensed.append(civ)
+    with open('scores/societal.txt') as f:
+        soc = f.read().splitlines()
+        condensed.append(soc)
+
+    ## Order is Econ Diplo Civil Societal
+    chart_data = [0,0,0,0,0,0,0,0,0,0]
+    overall_chart_data = []
+    lol =""
+    for category in condensed:
+        chart_data = [0,0,0,0,0,0,0,0,0,0]
+        for value in category:
+            chart_data[int(int(float(value))/10)] = chart_data[int(int(float(value))/10)] + 1
+        overall_chart_data.append(chart_data)
+    return render_template("chart.html", 
+    economic=overall_chart_data[0], 
+    diplomatic=overall_chart_data[1], 
+    civil=overall_chart_data[2], 
+    societal=overall_chart_data[3])
+
 if __name__ == '__main__':
   app.run(debug=True)
