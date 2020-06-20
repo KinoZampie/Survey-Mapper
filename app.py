@@ -141,6 +141,12 @@ def userinfo():
 @app.route("/survey/<user_id>", methods=["GET","POST"])
 def survey(user_id):
     if request.method == "POST":
+        if request.form.get("move") == "Back":
+            with open('users/{}.json'.format(user_id)) as f:
+                user_data = json.load(f)
+            user_data[user_id]["current_question"] = user_data[user_id]["current_question"] - 1
+            with open('users/{}.json'.format(user_id), "w") as f:
+                f.write(json.dumps(user_data,indent=2))
         if request.form.get("question") == None:
             return redirect(url_for("survey",user_id=user_id))
         else:

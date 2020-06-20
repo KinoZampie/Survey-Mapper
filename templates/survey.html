@@ -16,9 +16,9 @@
             <p><input type="radio" name="question" value="3">  Disagree</p>
             <p><input type="radio" name="question" value="1">  Strongly Disagree</p>
             {% if question_number != 0%}
-            <input type="submit" name="last" value="Back">
+            <input type="submit" name="move" value="Back">
             {% endif %}
-            <input type="submit" name="next" value="Next">
+            <input type="submit" name="move" value="Next">
             <p>Question {{question_number+1}}/31</p>
         </form>
         </div>
