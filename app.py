@@ -175,6 +175,14 @@ def survey(user_id):
                     f.write(str(user_id)+"\n")
                 with open('completed_ssns.txt', "a") as f:
                     f.write(str(user_data[user_id]["user_data"]["ssn"])+"\n")
+                with open('scores/economic.txt', "a") as f:
+                    f.write(str(economic)+"\n")
+                with open('scores/diplomatic.txt', "a") as f:
+                    f.write(str(diplomatic)+"\n")
+                with open('scores/civil.txt', "a") as f:
+                    f.write(str(civil)+"\n")
+                with open('scores/societal.txt', "a") as f:
+                    f.write(str(societal)+"\n")
                 return redirect(url_for("user_results",user_id=user_id))
             else:
                 return redirect(url_for("survey",user_id=user_id))

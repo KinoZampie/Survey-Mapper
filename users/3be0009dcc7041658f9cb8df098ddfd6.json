@@ -8,12 +8,12 @@
       "country": null,
       "ssn": "999"
     },
-    "current_question": 1,
+    "current_question": 31,
     "question_data": [
       [
         "Rampant consumerism, degeneracy and selfishness is all too common in society.",
         "tradition",
-        5
+        7
       ],
       [
         "Transhumanism and human augmentation are good things.",
@@ -23,154 +23,154 @@
       [
         "The government should have supreme power on policy during times of crisis.",
         "authority",
-        4
+        7
       ],
       [
         "I am proud to be born in my country",
         "nation",
-        null
+        7
       ],
       [
         "People of all groups should be well represented",
         "equality",
-        null
+        7
       ],
       [
         "There is minimal physical and mental difference between people of different races.",
         "equality",
-        null
+        7
       ],
       [
         "The state has no right to have any say in any voluntary exchanges, unless they are a part of said exchanges.",
         "market",
-        null
+        7
       ],
       [
         "A large portion of people are unable to make good decisions for themselves",
         "authority",
-        null
+        7
       ],
       [
         "Maintaining order is more important than preserving all freedoms.",
         "authority",
-        null
+        7
       ],
       [
         "All countries should be held to the same legal standard and follow international law.",
         "world",
-        null
+        7
       ],
       [
         "New change should be implemented slowly",
         "tradition",
-        null
+        7
       ],
       [
         "The international community does not have an understanding of my country's politics.",
         "world",
-        null
+        7
       ],
       [
         "Unrestricted markets will result in everyone becoming wealthier.",
         "market",
-        null
+        7
       ],
       [
         "Everyone is a citizen of the world and should act accordingly.",
         "world",
-        null
+        7
       ],
       [
         "People should not be discriminated against based on intrinsic qualities in any capacity.",
         "equality",
-        null
+        7
       ],
       [
         "A citizen's primary concern is with his/her nation and then the world.",
         "nation",
-        null
+        7
       ],
       [
         "Progress should be pursued, even at the expense of tradition",
         "progress",
-        null
+        7
       ],
       [
         "I should follow my country even when they take paths I disagree with.",
         "nation",
-        null
+        7
       ],
       [
         "The invisible hand is a better market operator than the government controlling the economy",
         "market",
-        null
+        7
       ],
       [
         "Scientific thought should be pursued at all costs",
         "progress",
-        null
+        7
       ],
       [
         "Scientific thought is not the end all be all. It is wrong at times.",
         "tradition",
-        null
+        7
       ],
       [
         "From each according to his ability, to each according to his needs",
         "equality",
-        null
+        7
       ],
       [
         "National governments must be kept in check by the global community by any means necessary.",
         "world",
-        null
+        7
       ],
       [
         "We are heading to a better world.",
         "progress",
-        null
+        7
       ],
       [
         "The freedom to succeed is the freedom to fail.",
         "liberty",
-        null
+        7
       ],
       [
         "Cultural values should be preserved and nurtured for future generations",
         "tradition",
-        null
+        7
       ],
       [
         "The only person who I trust to look out for myself is me.",
         "liberty",
-        null
+        7
       ],
       [
         "Government is run by people with unchecked power",
         "liberty",
-        null
+        7
       ],
       [
         "Victimless crimes should not be illegal.",
         "liberty",
-        null
+        7
       ],
       [
         "The world should progress to a one world government of sorts.",
         "world",
-        null
+        7
       ],
       [
         "It is the government's job to ensure the populace's wellbeing through any means necessary and to any extent.",
         "authority",
-        null
+        7
       ]
     ],
     "results": {
-      "Economic": null,
-      "Diplomatic": null,
-      "Civil": null,
-      "Societal": null
+      "Economic": 54.0,
+      "Diplomatic": 42.0,
+      "Civil": 50.0,
+      "Societal": 50.0
     }
   }
 }
