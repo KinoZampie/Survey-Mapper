@@ -8,9 +8,9 @@ The application is a flask app that asks users various questions regarding polit
 
 # PoliticalSurvey
 
-**This web app for this Epsilon Hacks Hackathon project by Groupuwu is hosted on:** <br>
-http://35.247.48.245 <br>
-http://35.247.48.245/results
+**A demo for this web app for this project can be found on:** <br>
+https://survey-mapper--harshitgupta2.repl.co/ <br>
+https://survey-mapper--harshitgupta2.repl.co/results
 
 **The landing page can be found on:**<br>
 https://political-survey-landing-page--harshitgupta2.repl.co/ <br>
