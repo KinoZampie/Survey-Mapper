@@ -4,19 +4,25 @@
 [![Run on Repl.it](https://repl.it/badge/github/KinoZampie/Survey-Mapper)](https://repl.it/github/KinoZampie/Survey-Mapper)
 
 This is my team's, GroupUwU, entry to the 2020 Epsilon Hacks High School Hackathon
-The application is a flask app that asks users various questions regarding political opinions and results in given scores of their political leanings. 
+The application is a flask app that asks users various questions regarding political opinions and results in given scores of their political leanings.
 
-# PoliticalSurvey
+## Resources
 
-**A demo for this web app for this project can be found on:** <br>
+*A demo for this web app can be found on:* <br>
 https://survey-mapper--harshitgupta2.repl.co/ <br>
 https://survey-mapper--harshitgupta2.repl.co/results
 
-**The landing page can be found on:**<br>
+*Look at the Devpost Submission!*<br>
+https://devpost.com/software/political-survey
+
+*The landing page can be found on:*<br>
 https://political-survey-landing-page--harshitgupta2.repl.co/ <br>
-**Source for the landing page:**<br>
+
+*Source for the landing page:*<br>
 https://repl.it/@HarshitGupta2/Political-Survey-Landing-Page#index.html or<br>
 https://github.com/KinoZampie/Political-Survey-Landing-Page
+
+## Project Description
 
 This project was inspired due to the fact that our group wanted to create a product that would store values using databases. Our group went through several ideas of which social good were focused on. After some time, we decided that having a political representation poll could be a realistic yet challenging project. Originally, the project was meant to be a political compass with only two axes (left vs. right on the x-axis and authority vs liberty on the vertical axis). However, it was decided to use 8values ( where this assesses economic, diplomatic, civil, and societal ideologies) in order to better assess what the people want.
 
