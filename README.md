@@ -1,6 +1,8 @@
 # Survey-Mapper
 ###### What I do when sleep deprived
 
+[![Run on Repl.it](https://repl.it/badge/github/KinoZampie/Survey-Mapper)](https://repl.it/github/KinoZampie/Survey-Mapper)
+
 This is my team's, GroupUwU, entry to the 2020 Epsilon Hacks High School Hackathon
 The application is a flask app that asks users various questions regarding political opinions and results in given scores of their political leanings. 
 
